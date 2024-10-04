@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  margin: unset;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.Container {
+  padding: 0px 45px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navlist {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  list-style: none;
+}
+.navlist li {
+  font-weight: 600;
+}
+.navlist li:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+main.contentArea {
+  height: 100%;
+  min-height: calc(100vh - 140px);
+}
+aside {
+  height: 100%;
+  width: 320px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+}
+.flexItem{
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+footer p {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+h5.logo {
+  font-size: 25px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  color: white;
+}
+.contentMain {
+  margin-left: 320px;
+  padding-left: 20px;
+}
+.personalInfo{
+    color: white;
+}
+.personalInfo ul{
+    margin-top: 20px;
+    padding: unset;
+    list-style: none;
+}
+.personalInfo ul li{
+    margin-bottom: 10px;
+}
+.personalInfo ul li span{
+    margin-right: 5px;
+}
+small {
+  font-size: 12px;
+}
+header {
+  background-color: #f1f1f1;
+  padding: 15px 0;
+}
+
+/* Container for flexboxes */
+.row {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Left and right column */
+.column.side {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+/* Middle column */
+.column.middle {
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .row {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.buttonBubble {
+  width: 160px;
+  height: 60px;
+  position: relative;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+  border: none;
+  background-color: #0c0c0c;
+  transition: all 0.2s ease;
+}
+.buttonBubble:hover {
+  transform: scale(0.96);
+}
+.buttonBubble:before,
+.buttonBubble:after {
+  position: absolute;
+  content: "";
+  width: 150%;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1000;
+  background-repeat: no-repeat;
+}
+.buttonBubble:hover:before {
+  top: -70%;
+  background-image: radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, #0c0c0c 20%, transparent 30%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #0c0c0c 15%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+  background-position: 50% 120%;
+  animation: topBubbles 1s ease;
+}
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+.buttonBubble:hover::after {
+  bottom: -70%;
+  background-image: radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, #0c0c0c 15%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%),
+    radial-gradient(circle, #0c0c0c 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+  background-position: 50% 0%;
+  animation: bottomBubbles 1s ease;
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
